@@ -1,4 +1,5 @@
 from utilities import show
+#Human player move
 def takePlayerMove(player,stealing,representation):
     while(1):
         p= int(input('\n which pocket do you want to move? '))
@@ -34,6 +35,7 @@ def takePlayerMove(player,stealing,representation):
             elif position<6 and position>=0:
                 representation[side][position]+=1
             position=(position+1)%7
+        #steal
         if stealing==1:
 
             temp=6-position
@@ -50,6 +52,7 @@ def takePlayerMove(player,stealing,representation):
 
     return representation
 
+#AI move
 def takeAiMove(player,stealing,rep,p):
     playAgainFlag=0
     side=player
