@@ -20,7 +20,7 @@ def save( path, data):
         with open(path+".pickle","wb") as f:
             pickle.dump(data,f)
     except Exception as e:
-        print("couldn't save " , e) 
+        print("couldn't save " , e)
 def load(path):
     try:
         with open(path+".pickle","rb") as f:

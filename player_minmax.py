@@ -11,13 +11,13 @@ class Player:
     def EvalFn(self,rep):
         #(rep[self.num][6]-rep[1-self.num][6])+0.5
         #if self.maxOrMin==1:
-        return (rep[self.num][6]-rep[1-self.num][6]) 
+        return (rep[self.num][6]-rep[1-self.num][6])
         #else:
             #return (rep[1-self.num][6]-rep[self.num][6]) #-sum(rep[self.num][3:6])-sum(rep[1-self.num][0:3])
     def minimax(self,rep, depth, alpha, beta, maximizingPlayer):
         #print(depth)
         if depth == 0 or self.isGameOver(rep)==True:
-            #print("here  {},,,,{}".format(depth,self.isGameOver(rep)))
+            #print("here  {},,,, {}".format(depth,self.isGameOver(rep)))
             return self.EvalFn(rep),0
         tempRep = copy.deepcopy(rep)
         if maximizingPlayer==True:
@@ -45,7 +45,7 @@ class Player:
 
                 i+=1
             return maxEval,move
-    
+
         else:
             minEval = +1000
             move=0
@@ -59,7 +59,7 @@ class Player:
                     eval,_ = self.minimax(tempRep, depth - 1, alpha, beta, True)
                 else:
                     eval,_ = self.minimax(tempRep, depth - 1, alpha, beta, False)
-                
+
 
                 minEval = min(minEval, eval)
                 beta = min(beta, eval)
@@ -69,4 +69,3 @@ class Player:
                     break
                 i+=1
             return minEval,move
-

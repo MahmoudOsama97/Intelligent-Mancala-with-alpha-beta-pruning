@@ -1,5 +1,5 @@
 from utilities import show
-#Human player move
+#Human player moves
 def takePlayerMove(player,stealing,representation):
     while(1):
         p= int(input('\n which pocket do you want to move? '))

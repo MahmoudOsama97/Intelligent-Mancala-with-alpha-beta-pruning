@@ -26,6 +26,7 @@ def main():
         Ai1=Player(1,stealing)
         Ai0=Player(0,stealing)
 
+        #game types
         print("enter game Type: ")
         print("1- player vs player")
         print("2- player vs AI")
@@ -95,11 +96,11 @@ def main():
                 show(representation)
                 save(savingPath,representation)
                 break
-            
+
             show(representation)
             if savingMode==1 and player==0:
                 save(savingPath,representation)
-                
+
         playAgain=int(input("do you want to play again yes:1,no:0:" ))
 
 if __name__ == '__main__':
