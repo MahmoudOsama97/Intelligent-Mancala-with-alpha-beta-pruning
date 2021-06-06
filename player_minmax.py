@@ -9,11 +9,11 @@ class Player:
         return sum(rep[1][0:6])==0 or sum(rep[0][0:6])==0
 
     def EvalFn(self,rep):
-        #(rep[self.num][6]-rep[1-self.num][6])+0.5
+        #(rep[self.num][6]-rep[1-self.num][6]) + 0.5
         #if self.maxOrMin==1:
         return (rep[self.num][6]-rep[1-self.num][6])
         #else:
-            #return (rep[1-self.num][6]-rep[self.num][6]) #-sum(rep[self.num][3:6])-sum(rep[1-self.num][0:3])
+            #return (rep[1-self.num][6]- rep[self.num][6]) #-sum(rep[self.num][3:6])-sum(rep[1-self.num][0:3])
     def minimax(self,rep, depth, alpha, beta, maximizingPlayer):
         #print(depth)
         if depth == 0 or self.isGameOver(rep)==True:

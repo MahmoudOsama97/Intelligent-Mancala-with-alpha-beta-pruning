@@ -6,7 +6,7 @@ from player_minmax import Player
 def main():
     playAgain=1
     while(playAgain):
-        newGame=int(input("Do you want to start new game or continue ?(0:continue, 1:new): "))
+        newGame=int(input("Do you want to start new game or continue ? (0:continue, 1:new): "))
 
         if newGame==1:
             Player1 = [4, 4, 4, 4, 4, 4, 0]
@@ -17,22 +17,22 @@ def main():
             representation=load(path)
 
 
-        savingMode=int(input("Do you want to save your game status while playing ?(0: No, 1: Yes): " ))
+        savingMode=int(input("Do you want to save your game status while playing ? (0:No, 1:Yes): " ))
         if savingMode:
             savingPath=input("Enter saving file name: " )
-        stealing =int(input("Enter mode (0:Without stealing, 1:Stealing): " ))
+        stealing =int(input("Enter mode (0:Without Stealing, 1:With Stealing): " ))
         player=0
         playAgainFlag=0
         Ai1=Player(1,stealing)
         Ai0=Player(0,stealing)
 
         #game types
-        print("enter game Type: ")
-        print("1- player vs player")
-        print("2- player vs AI")
-        print("3- AI vs player")
+        print("Choose The Game Type: ")
+        print("1- Player vs Player")
+        print("2- Player vs AI")
+        print("3- AI vs Player")
         print("4- AI vs AI")
-        game=int(input("game Type: "))
+        game=int(input("Game Type: "))
         if game==2 or game==3:
             difficulty1=int(input("Enter AI difficulty(1-12): "))
         elif game==4:
@@ -42,7 +42,7 @@ def main():
         show(representation)
         while(1):
 
-            print('player {} move'.format(player+1))
+            print('Player {} Move'.format(player+1))
             if game==1:
                 if player==0:
                     representation=takePlayerMove(player,stealing,representation)
@@ -101,7 +101,7 @@ def main():
             if savingMode==1 and player==0:
                 save(savingPath,representation)
 
-        playAgain=int(input("do you want to play again yes:1,no:0:" ))
+        playAgain=int(input("Do you want to play again? (yes:1, no:0): " ))
 
 if __name__ == '__main__':
     main()

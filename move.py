@@ -2,7 +2,7 @@ from utilities import show
 #Human player moves
 def takePlayerMove(player,stealing,representation):
     while(1):
-        p= int(input('\n which pocket do you want to move? '))
+        p= int(input('\n Which pocket do you want to move? '))
 
         if p>6 or p<1 :
             #print('Enter a valid pocket number')
@@ -46,7 +46,7 @@ def takePlayerMove(player,stealing,representation):
                 representation[s][temp]=0
         if position==0 and side!=player and sum(representation[player][0:6]):
             show(representation)
-            print("you will play again")
+            print("You will play again")
         else:
             break
 
